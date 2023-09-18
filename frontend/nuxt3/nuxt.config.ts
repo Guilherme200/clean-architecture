@@ -1,5 +1,7 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 
+import path from "path";
+
 export default defineNuxtConfig({
   // @ts-ignore
   ssr: false,
@@ -8,16 +10,27 @@ export default defineNuxtConfig({
     head: {
       charset: 'utf-8',
       viewport: 'width=device-width, initial-scale=1',
-      title: 'Tasks',
+      title: 'Task',
       htmlAttrs: {
         lang: 'pt-br',
       },
     },
   },
 
+  modules: [
+    '@nuxtjs/tailwindcss',
+    'nuxt-icon'
+  ],
+
   css: [
     '~/assets/css/main.css',
   ],
+
+  tailwindcss: {
+    cssPath: '~/assets/css/main.css',
+    configPath: '~/tailwind.config.js',
+    viewer: false,
+  },
 
   runtimeConfig: {
     public: {
@@ -26,13 +39,9 @@ export default defineNuxtConfig({
     },
   },
 
-  modules: [
-    '@nuxtjs/tailwindcss',
-  ],
-
-  lodash: {
-    prefix: '_',
-    prefixSkip: ['string'],
-    upperAfterPrefix: false,
-  },
-})
+  resolve: {
+    alias: {
+      '@core': path.resolve('../core')
+    }
+  }
+} as any)
