@@ -6,7 +6,8 @@
     "start:core": " npm run start -w core",
     "test:core": " npm run test -w core",
     "build:nuxt": "npm run build -w nuxt3",
-    "dev": "npm run dev -w nuxt3"
+    "dev": "npm run dev -w nuxt3",
+    "build": "build:core && build:nuxt"
   },
   "workspaces": [
     "./src/core",
