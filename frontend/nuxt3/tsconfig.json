@@ -1,7 +1,0 @@
-{
-  // https://nuxt.com/docs/guide/concepts/typescript
-  "baseUrl": "~/../.",
-  "paths": {
-    "@core/*": ["~/../core/src/*"]
-  }
-}
