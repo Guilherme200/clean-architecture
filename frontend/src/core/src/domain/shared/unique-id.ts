@@ -1,14 +1,15 @@
 import {v4 as uuidv4, validate as uuidValidate} from 'uuid'
 
 export default class UniqueId {
-  constructor(public readonly id?: string) {
+  public readonly id: string;
+
+  constructor(id?: string) {
     this.id = id || uuidv4();
     this.validate();
   }
 
   private validate() {
-    const isValid = (typeof this.id === 'string') && uuidValidate(this.id);
-    if (!isValid) {
+    if (!uuidValidate(this.id)) {
       throw new Error("ID must be a valid UUID");
     }
   }
