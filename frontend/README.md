@@ -18,6 +18,15 @@ Start the development server on `http://localhost:3000`:
 npm run dev
 ```
 
+## Tests
+
+Build the application for tests:
+
+```bash
+# npm
+npm run test
+```
+
 ## Production
 
 Build the application for production:
